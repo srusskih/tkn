@@ -10,15 +10,10 @@ center <<-EOS
   BaRuCo 2012
 EOS
 
-code <<-EOS
-  require 'application_controller'
-  require 'post'
+code <<-EOS, :python
+  from django impoty http
 
-  class PostsController < ApplicationController
-    def index
-      @posts = Post.all
-    end
-  end
+  raise htttp.Http404
 EOS
 
 code <<-EOS

@@ -20,8 +20,8 @@ def block(content)
   slide(content, :block)
 end
 
-def code(content, lexer=:ruby)
-  slide(content, :code, lexer)
+def code(content, lexer=:ruby, style=:monokai)
+  slide(content, :code, lexer, style)
 end
 
 def image(image_path)
@@ -160,8 +160,8 @@ def render_section(title)
 end
 
 # Renders source code.
-def render_code(code, lexer)
-  render_block(Pygments.highlight(code, formatter: 'terminal256', lexer: lexer, options: {style: 'bw'}))
+def render_code(code, lexer, style='monokai')
+  render_block(Pygments.highlight(code, formatter: 'terminal256', lexer: lexer, options: {style: style}))
 end
 
 # Centers the whole content as a block. That is, the format within the content
