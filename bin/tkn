@@ -20,7 +20,7 @@ def block(content)
   slide(content, :block)
 end
 
-def code(content, lexer=:ruby, style=:monokai)
+def code(content, lexer=:ruby, style=:fruity)
   slide(content, :code, lexer, style)
 end
 
@@ -161,6 +161,7 @@ end
 
 # Renders source code.
 def render_code(code, lexer, style='monokai')
+  # puts Pygments.styles
   render_block(Pygments.highlight(code, formatter: 'terminal256', lexer: lexer, options: {style: style}))
 end
 
